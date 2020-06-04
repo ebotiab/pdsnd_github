@@ -2,10 +2,10 @@
 4th of June, 2020
 
 ### Project Title
-Replace the Project Title
+Bikeshare.py
 
 ### Description
-Describe what your project is about and what it does
+This project consists in a program that interacts with the user to display data of bikeshare in US
 
 ### Files used
 Include the files used
