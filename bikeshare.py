@@ -1,5 +1,7 @@
+#Bikeshare project programmed by Enrique Botia with the collaboration of Udacity
 import time
 import pandas as pd
+
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
