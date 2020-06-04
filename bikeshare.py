@@ -25,11 +25,12 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    input0 = input("Write the name of one of these cities to see its data: Chicago, New York, Washington\n")
-    possible_input0 = ['Chicago', 'New York', 'Washington', 'chicago', 'new york', 'washington']
-    m0 = "Please repeat your answer with one of the following options:  Chicago, New York, Washington\n"
+    input0 = input("Write the name of one of these cities to see its data: Chicago, New York, Washington. If you want to to exit now, write return.\n")
+    possible_input0 = ['Chicago', 'New York', 'Washington', 'chicago', 'new york', 'washington', 'return', 'Return']
+    m0 = "Please repeat your answer with one of the following options:  Chicago, New York, Washington, return\n"
     city = check_input(input0,possible_input0,m0).lower()
-    
+    if city == 'return':
+        return 'return'   
     input1 = input('Write one of the following filters: month, day, both, none \n')
     possible_input1 = ['month', 'day', 'both', 'none','Month', 'Day', 'Both', 'None']
     m1 = "Please repeat your answer with one of the following options:  month, day, both or none \n"
@@ -204,7 +205,10 @@ def user_stats(df):
 
 def main():
     while True:
-        city, month, day = get_filters()
+        filters_or_return = get_filters()
+        if filters_or_return == 'return':
+            break
+        city, month, day = filters_or_return
         df = load_data(city, month, day)
         if df.shape[0]==0:
             restart = input('\nSorry, there is no data with these filters, would you like to restart? Enter yes or no.\n')
