@@ -2,10 +2,12 @@
 import time
 import pandas as pd
 
-
+#These are the data files available:
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
+
+#These are all different functions needed to the process
 
 def check_input(inp, possible_inputs, message):
     """Ensure that the input is inside of the allowed ones"""
@@ -203,6 +205,7 @@ def user_stats(df):
     print('-'*40)
 
 
+#This is the main loop of the program
 def main():
     while True:
         filters_or_return = get_filters()
